@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Views/Shared/Dashboard.cshtml";
+}
+
+<div class="content-inner">
+    <!-- Page Header-->
+    <header class="page-header">
+        <div class="container-fluid">
+            <h2 class="no-margin-bottom">  @ViewData["ActiveMenu"]</h2>
+        </div>
+        <div class="col-md-3 pull-right" style="margin-top:-30px;width:250px">
+
+            <select class="form-control" id="SubMenu">
+                <option value="0" selected style="text-align:center;" disabled>İşlemler</option>
+                <option value="1">Menüye Kategori Ekle</option>
+                <option value="2"> Kategoriye Ürün Ekle</option>
+                <option value="3"> Menü Listesi</option>
+            </select>
+
+        </div>
+    </header>
+    <section class="dashboard-counts no-padding-bottom">
+        <div class="container-fluid">
+            <div class="row bg-white has-shadow">
+                <div class="card col-md-12">
+                    <div class="card-header"><label id="lblSubMenu"></label></div>
+                    <div class="card-body">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+<script type="text/javascript">
+    $("#SubMenu").on("change", function (e) {
+
+        document.getElementById("lblSubMenu").innerText = $("#SubMenu option:selected").text();
+    })
+</script>
